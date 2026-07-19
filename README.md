@@ -23,23 +23,16 @@ An intelligent, data-driven Decision Support System (DSS) that provides personal
 
 ```mermaid
 graph TD
-    %% Define Styles
-    classDef user fill:#2b3a42,stroke:#3f5765,stroke-width:2px,color:#fff;
-    classDef api fill:#009688,stroke:#00796b,stroke-width:2px,color:#fff;
-    classDef logic fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff;
-    classDef data fill:#2980b9,stroke:#2471a3,stroke-width:2px,color:#fff;
-    classDef front fill:#8e44ad,stroke:#732d91,stroke-width:2px,color:#fff;
-
     %% Nodes
-    A([User Dashboard UI]) ::: user
-    B(FastAPI Backend Endpoints) ::: api
-    C{Smart Data Cache} ::: data
-    D[(Local CSV Files)] ::: data
-    E((YFinance API)) ::: data
-    F[Feature Engineering & Indicators] ::: logic
-    G[Heuristic Scoring Model] ::: logic
-    H[Simulated Annealing Optimizer] ::: logic
-    I([Final Optimized Portfolio]) ::: front
+    A([User Dashboard UI])
+    B(FastAPI Backend Endpoints)
+    C{Smart Data Cache}
+    D[(Local CSV Files)]
+    E((YFinance API))
+    F[Feature Engineering & Indicators]
+    G[Heuristic Scoring Model]
+    H[Simulated Annealing Optimizer]
+    I([Final Optimized Portfolio])
 
     %% Connections
     A -- JSON: Capital, Risk, Sectors --> B
@@ -53,3 +46,17 @@ graph TD
     H -- "Algorithm Weights" --> B
     B -- "JSON Response" --> I
     I -- "Renders Charts" --> A
+
+    %% Define Styles
+    classDef user fill:#2b3a42,stroke:#3f5765,stroke-width:2px,color:#fff
+    classDef api fill:#009688,stroke:#00796b,stroke-width:2px,color:#fff
+    classDef logic fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff
+    classDef data fill:#2980b9,stroke:#2471a3,stroke-width:2px,color:#fff
+    classDef front fill:#8e44ad,stroke:#732d91,stroke-width:2px,color:#fff
+
+    %% Assign Styles
+    class A user
+    class B api
+    class C,D,E data
+    class F,G,H logic
+    class I front
