@@ -60,3 +60,19 @@ graph TD
     class C,D,E data
     class F,G,H logic
     class I front
+
+🚀 Installation & Setup1. Clone the RepositoryBashgit clone [https://github.com/masadabbas/ai-investment-dss.git](https://github.com/masadabbas/ai-investment-dss.git)
+cd ai-investment-dss
+2. Configure the Python BackendCreate and activate a clean virtual environment, then install the dependencies:Bash# Create virtual environment
+python -m venv venv
+
+# Activate (Windows)
+venv\Scripts\activate
+
+# Activate (macOS/Linux)
+source venv/bin/activate
+
+# Install required packages
+pip install -r requirements.txt
+3. Run the Backend APIStart the FastAPI server. This acts as the data engine for the system.Bashuvicorn api:app --reload
+Base URL: http://127.0.0.1:8000Swagger API Docs: http://127.0.0.1:8000/docs💻 Running the Frontend DashboardThe frontend is built using standard web technologies and connects to the API via REST.Open your code editor (e.g., VS Code).Install the Live Server extension.Navigate to the frontend/ folder.Right-click index.html and select "Open with Live Server".The dashboard will automatically launch in your browser at http://127.0.0.1:5500.🛠️ Tech Stack DirectoryBackend Framework: FastAPI, UvicornData Sourcing: yfinance, Pandas, NumPyMachine Learning/Optimization: Scikit-learn, Custom Meta-HeuristicsFrontend: HTML5, CSS3, Vanilla JavaScript (ES6)🔒 API EndpointsMethodEndpointDescriptionGET/API Root Health CheckPOST/api/run-pipelineCore processing engine. Accepts User constraints (JSON) and returns the evaluated matrix & optimized capital allocations.
