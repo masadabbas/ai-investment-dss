@@ -23,13 +23,13 @@ An intelligent, data-driven Decision Support System (DSS) that provides personal
 ## 🚀 Installation & Setup
 
 ### 1. Clone the Repository
-```bash
+
 git clone [https://github.com/masadabbas/ai-investment-dss.git](https://github.com/masadabbas/ai-investment-dss.git)
 cd ai-investment-dss
+
 ### 2. Configure the Python Backend
 Create and activate a clean virtual environment, then install the dependencies:
 
-```bash
 # Create virtual environment
 python -m venv venv
 
@@ -55,8 +55,11 @@ Swagger API Docs: http://127.0.0.1:8000/docs
 FastAPI, UvicornData Sourcing: yfinance, Pandas, NumPyMachine 
 Learning/Optimization: Scikit-learn, Custom Meta-HeuristicsFrontend: HTML5, CSS3, Vanilla JavaScript (ES6)
 
-##🔒 API EndpointsMethodEndpointDescription
-GET/API Root Health CheckPOST/api/run-pipelineCore processing engine. 
+##🔒 API 
+Endpoints   MethodEndpoint       Description
+GET/API     Root                 Health Check
+POST/api/   run-pipelineCore     processing engine. 
+
 Accepts User constraints (JSON) and returns the evaluated matrix & optimized capital allocations.
 
 ---
