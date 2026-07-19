@@ -11,6 +11,7 @@ An intelligent, data-driven Decision Support System (DSS) that provides personal
 ---
 
 ## ✨ Core Features
+
 *   **Live Market Data Integration:** Connects to Yahoo Finance (`yfinance`) to fetch live ticker data and news.
 *   **Smart TTL Caching:** Implements daily local caching (`.csv`) to prevent network bottlenecks and API rate limits.
 *   **Heuristic Scoring Engine:** Evaluates assets based on CAGR, Volatility, Stability, Dividend Yield, and Liquidity.
@@ -18,23 +19,29 @@ An intelligent, data-driven Decision Support System (DSS) that provides personal
 *   **Interactive UI:** A lightweight, responsive HTML/JS frontend dashboard to interact seamlessly with the FastAPI backend.
 
 ---
-#🚀 Installation & Setup
-##1. Clone the RepositoryBashgit clone [https://github.com/masadabbas/ai-investment-dss.git](https://github.com/masadabbas/ai-investment-dss.git)
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/masadabbas/ai-investment-dss.git](https://github.com/masadabbas/ai-investment-dss.git)
 cd ai-investment-dss
-##2. Configure the Python BackendCreate and activate a clean virtual environment, then install the dependencies:
-Bash
-### Create virtual environment
+### 2. Configure the Python Backend
+Create and activate a clean virtual environment, then install the dependencies:
+
+```bash
+# Create virtual environment
 python -m venv venv
 
-### Activate (Windows)
+# Activate (Windows)
 venv\Scripts\activate
 
-### Activate (macOS/Linux)
+# Activate (macOS/Linux)
 source venv/bin/activate
 
 # Install required packages
 pip install -r requirements.txt
-##3. Run the Backend APIStart the FastAPI server. 
+###3. Run the Backend APIStart the FastAPI server. 
 This acts as the data engine for the system.Bashuvicorn api:app --reload
 Base URL: http://127.0.0.1:8000
 Swagger API Docs: http://127.0.0.1:8000/docs
