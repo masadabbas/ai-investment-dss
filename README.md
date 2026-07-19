@@ -1,150 +1,55 @@
-# AI-Based Long-Term Investment Advisory System
+# 📈 AI-Based Long-Term Investment Advisory System
 
-## Overview
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue?style=for-the-badge&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?style=for-the-badge&logo=fastapi)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript)
+![HTML5/CSS3](https://img.shields.io/badge/HTML5_&_CSS3-UI-E34F26?style=for-the-badge&logo=html5)
+![Machine Learning](https://img.shields.io/badge/AI-Optimization-FF6F00?style=for-the-badge)
 
-The AI-Based Long-Term Investment Advisory System is an intelligent investment recommendation platform designed to assist investors in making informed long-term investment decisions. The system analyzes global market data, financial indicators, and news sentiment to generate explainable investment recommendations and optimized portfolio allocations.
-
-The platform integrates financial analysis, rule-based sentiment reasoning, heuristic scoring, and portfolio optimization techniques to provide transparent and data-driven investment advice.
-
-## Features
-
-* Global Market Data Analysis
-* Financial Feature Engineering
-* News Sentiment Analysis using Propositional Logic
-* Explainable AI (XAI) Recommendations
-* Risk-Based Investor Profiling
-* Sector-Based Asset Filtering
-* Heuristic Scoring Engine
-* Portfolio Optimization
-* Interactive Dashboard
-* FastAPI REST API
-
-## System Modules
-
-### Data Acquisition Layer
-
-* Historical market data collection
-* Live financial news retrieval
-* Sector classification and filtering
-
-### Feature Engineering
-
-* Compound Annual Growth Rate (CAGR)
-* Volatility Analysis
-* Stability Measurement
-* Dividend Yield Calculation
-* Liquidity Assessment
-
-### News Reasoning Engine
-
-* Rule-based sentiment evaluation
-* Positive and negative market signal detection
-* Explainable decision-making process
-
-### Heuristic Scoring Engine
-
-* Feature normalization
-* Weighted scoring mechanism
-* Composite investment score generation
-
-### Recommendation Engine
-
-* Conservative Investor Profile
-* Moderate Investor Profile
-* Aggressive Investor Profile
-* Explainable asset approval and rejection
-
-### Portfolio Optimization
-
-* Hill Climbing Algorithm
-* Simulated Annealing Algorithm
-* Risk-aware capital allocation
+An intelligent, data-driven Decision Support System (DSS) that provides personalized long-term investment portfolios. The system evaluates live market data, applies propositional logic based on user risk profiles, and utilizes advanced meta-heuristic algorithms (Simulated Annealing & Hill Climbing) to optimize capital allocation.
 
 ---
 
-## Technology Stack
-
-### Backend
-
-* Python
-* FastAPI
-* NumPy
-* Pandas
-* yFinance
-
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
-* Chart.js
-* Plotly
+## ✨ Core Features
+*   **Live Market Data Integration:** Connects to Yahoo Finance (`yfinance`) to fetch live ticker data and news.
+*   **Smart TTL Caching:** Implements daily local caching (`.csv`) to prevent network bottlenecks and API rate limits.
+*   **Heuristic Scoring Engine:** Evaluates assets based on CAGR, Volatility, Stability, Dividend Yield, and Liquidity.
+*   **Portfolio Optimization:** Utilizes mathematical optimization algorithms to calculate the exact weight and capital allocation for each approved asset.
+*   **Interactive UI:** A lightweight, responsive HTML/JS frontend dashboard to interact seamlessly with the FastAPI backend.
 
 ---
 
-## Installation
+## 📊 System Architecture & Data Flow
 
-Clone the repository:
+```mermaid
+graph TD
+    %% Define Styles
+    classDef user fill:#2b3a42,stroke:#3f5765,stroke-width:2px,color:#fff;
+    classDef api fill:#009688,stroke:#00796b,stroke-width:2px,color:#fff;
+    classDef logic fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff;
+    classDef data fill:#2980b9,stroke:#2471a3,stroke-width:2px,color:#fff;
+    classDef front fill:#8e44ad,stroke:#732d91,stroke-width:2px,color:#fff;
 
-```bash
-git clone https://github.com/Abdul-Ahad11/AI-Based-Long-Term-Investment-Advisory-System.git
-cd AI-Based-Long-Term-Investment-Advisory-System
-```
+    %% Nodes
+    A([User Dashboard UI]) ::: user
+    B(FastAPI Backend Endpoints) ::: api
+    C{Smart Data Cache} ::: data
+    D[(Local CSV Files)] ::: data
+    E((YFinance API)) ::: data
+    F[Feature Engineering & Indicators] ::: logic
+    G[Heuristic Scoring Model] ::: logic
+    H[Simulated Annealing Optimizer] ::: logic
+    I([Final Optimized Portfolio]) ::: front
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the FastAPI server:
-
-```bash
-uvicorn api:app --reload
-```
-
-Open the application in your browser and start analyzing investment opportunities.
-
----
-
-## Project Objectives
-
-* Provide data-driven investment recommendations
-* Improve portfolio decision-making
-* Increase transparency through explainable AI
-* Support different investor risk profiles
-* Optimize capital allocation strategies
-
----
-
-## Team Members
-
-* Abdul Ahad (BCS233130)
-* Muhammad Asad Abbas (BCS233137)
-* Abdul Jabbar (BCS233119)
-
----
-
-## Supervisor
-
-Dr. M Abdul Qadir
-
-Department of Computer Science
-
-Capital University of Science and Technology (CUST), Islamabad
-
----
-
-## Future Enhancements
-
-* Machine Learning-Based Sentiment Analysis
-* Real-Time Market Monitoring
-* Advanced Portfolio Optimization Models
-* Multi-Source Financial Data Integration
-* Enhanced Explainable AI Features
-
----
-
-## License
-
-This project was developed as an academic Final Project for educational and research purposes.
+    %% Connections
+    A -- JSON: Capital, Risk, Sectors --> B
+    B --> C
+    C -- "If today's data exists" --> D
+    C -- "If data is old/missing" --> E
+    E -- "Save new data" --> D
+    D --> F
+    F -- "CAGR, Volatility, etc." --> G
+    G -- "Approved Stocks Matrix" --> H
+    H -- "Algorithm Weights" --> B
+    B -- "JSON Response" --> I
+    I -- "Renders Charts" --> A
