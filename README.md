@@ -61,7 +61,7 @@ graph TD
     class F,G,H logic
     class I front
 
-🚀 Installation & Setup1. Clone the RepositoryBashgit clone [https://github.com/masadabbas/ai-investment-dss.git](https://github.com/masadabbas/ai-investment-dss.git)
+#🚀 Installation & Setup1. Clone the RepositoryBashgit clone [https://github.com/masadabbas/ai-investment-dss.git](https://github.com/masadabbas/ai-investment-dss.git)
 cd ai-investment-dss
 2. Configure the Python BackendCreate and activate a clean virtual environment, then install the dependencies:Bash# Create virtual environment
 python -m venv venv
